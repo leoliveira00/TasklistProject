@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TasklistProject1.Models.Tasklist>
+
+@{
+    ViewData["Title"] = "Tasklists";
+}
+
+<h2>Tasklist</h2>
+
+<p>
+    <a asp-action="Create">Cadastrar Nova Tarefa >></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Título
+            </th>
+            <th>
+                Descrição
+            </th>
+            <th>
+                Data Criação
+            </th>
+            <th>
+                Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskTitulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskDescricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskDataCriacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskStatus)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Deletar</a>
+            </td>
+        </tr>}
+    </tbody>
+</table>

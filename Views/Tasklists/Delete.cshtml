@@ -1,0 +1,44 @@
+﻿@model TasklistProject1.Models.Tasklist
+
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<h2>Deletar</h2>
+
+<h3>Deseja deletar este registro?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Título
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaskTitulo)
+        </dd>
+        <dt>
+            Descrição
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaskDescricao)
+        </dd>
+        <dt>
+            Data Criação
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaskDataCriacao)
+        </dd>
+        <dt>
+            Status
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaskStatus)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Deletar" class="btn btn-default" /><br /><br />
+        <a asp-action="Index"><< Voltar para a listagem</a>
+    </form>
+</div>

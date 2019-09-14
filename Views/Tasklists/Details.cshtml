@@ -1,0 +1,41 @@
+﻿@model TasklistProject1.Models.Tasklist
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Título
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaskTitulo)
+        </dd>
+        <dt>
+            Descrição
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaskDescricao)
+        </dd>
+        <dt>
+            Data Criação
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaskDataCriacao)
+        </dd>
+        <dt>
+            Status
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TaskStatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Editar Tarefa</a> |
+    <a asp-action="Index">Voltar</a>
+</div>
